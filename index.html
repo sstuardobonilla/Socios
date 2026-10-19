@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hazte Socio | Primera Compañía de Bomberos "Bomba Aconcagua"</title>
+    
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* ==========================================================================
+           VARIABLES CSS & THEME CONFIGURATION
+           ========================================================================== */
+        :root {
+            --primary-red: #D32F2F;
+            --primary-red-hover: #B71C1C;
+            --primary-red-light: #FFEBEE;
+            --dark-black: #121212;
+            --off-black: #1E1E1E;
+            --light-bg: #F8F9FA;
+            --pure-white: #FFFFFF;
+            --text-main: #212529;
+            --text-muted: #6C757D;
+            --border-color: #E0E0E0;
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.06);
+            --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 30px rgba(0,0,0,0.15);
+            --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --radius-sm: 6px;
+            --radius-md: 12px;
+            --radius-lg: 20px;
+        }
+
+        /* ==========================================================================
+           RESET & BASE STYLES
+           ========================================================================== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-main);
+            background-color: var(--pure-white);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* ==========================================================================
+           HEADER & NAVIGATION
+           ========================================================================== */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-sm);
+            z-index: 1000;
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-badge {
+            width: 48px;
+            height: 48px;
+            background: var(--primary-red);
+            color: var(--pure-white);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 1.4rem;
+            font-weight: 900;
+            box-shadow: 0 4px 10px rgba(211, 47, 47, 0.3);
+        }
+
+        .brand-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-title {
+            font-size: 1.1rem;
+            color: var(--dark-black);
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+        }
+
+        .brand-subtitle {
+            font-size: 0.8rem;
+            color: var(--primary-red);
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            font-weight: 600;
+            color: var(--off-black);
+            font-size: 0.95rem;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red);
+        }
+
+        .btn-donate-nav {
+            background-color: var(--primary-red);
+            color: var(--pure-white);
+            padding: 0.6rem 1.4rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-donate-nav:hover {
+            background-color: var(--primary-red-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+        }
+
+        /* ==========================================================================
+           HERO SECTION
+           ========================================================================== */
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.92) 0%, rgba(30, 30, 30, 0.88) 100%), 
+                        url('https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+            color: var(--pure-white);
+            padding: 6rem 1.5rem;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(211, 47, 47, 0.2);
+            border: 1px solid var(--primary-red);
+            color: #FF6B6B;
+            padding: 0.4rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-size: 3.2rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-slogan {
+            color: var(--primary-red);
+            background: linear-gradient(45deg, #FF5252, #FF1744);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            display: block;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: #E0E0E0;
+            max-width: 750px;
+            margin: 0 auto 2.5rem;
+            font-weight: 400;
+        }
+
+        .hero-actions {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .btn-hero-primary {
+            background-color: var(--primary-red);
+            color: var(--pure-white);
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-md);
+            font-weight: 800;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .btn-hero-primary:hover {
+            background-color: var(--primary-red-hover);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(211, 47, 47, 0.5);
+        }
+
+        .btn-hero-secondary {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--pure-white);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 1rem 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-hero-secondary:hover {
+            background-color: var(--pure-white);
+            color: var(--dark-black);
+        }
+
+        /* ==========================================================================
+           METRICS / IMPACT COUNTER
+           ========================================================================== */
+        .impact-section {
+            background-color: var(--off-black);
+            color: var(--pure-white);
+            padding: 2.5rem 1.5rem;
+            border-bottom: 1px solid #333;
+        }
+
+        .impact-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .impact-item {
+            padding: 1rem;
+        }
+
+        .impact-number {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: var(--primary-red);
+            font-family: var(--font-heading);
+            margin-bottom: 0.2rem;
+        }
+
+        .impact-label {
+            font-size: 0.9rem;
+            color: #A0A0A0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+        }
+
+        /* ==========================================================================
+           MAIN DONATION SECTION & FORM
+           ========================================================================== */
+        .donation-section {
+            padding: 5rem 1.5rem;
+            background-color: var(--light-bg);
+        }
+
+        .section-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 3.5rem;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--dark-black);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .section-subtitle {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .donation-card {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--pure-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        .card-header-tabs {
+            display: flex;
+            background-color: #F1F3F5;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .tab-btn {
+            flex: 1;
+            padding: 1.2rem;
+            background: none;
+            border: none;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--text-muted);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .tab-btn.active {
+            background-color: var(--pure-white);
+            color: var(--primary-red);
+            border-bottom: 3px solid var(--primary-red);
+        }
+
+        .form-body {
+            padding: 2.5rem;
+        }
+
+        /* Amount Selection Grid */
+        .form-group-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--dark-black);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .amounts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .amount-btn {
+            background-color: var(--pure-white);
+            border: 2px solid var(--border-color);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.2rem;
+            color: var(--off-black);
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .amount-btn:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        .amount-btn.selected {
+            background-color: var(--primary-red-light);
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        .custom-amount-wrapper {
+            position: relative;
+            margin-bottom: 2rem;
+        }
+
+        .custom-amount-wrapper span {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 700;
+            color: var(--text-muted);
+        }
+
+        .custom-amount-input {
+            width: 100%;
+            padding: 0.9rem 1rem 0.9rem 2.5rem;
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius-md);
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition-smooth);
+        }
+
+        .custom-amount-input:focus {
+            outline: none;
+            border-color: var(--primary-red);
+        }
+
+        /* Donor Info Inputs */
+        .inputs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
+
+        .input-group.full-width {
+            grid-column: span 2;
+        }
+
+        .input-label {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--off-black);
+            text-transform: uppercase;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-sm);
+            font-size: 0.95rem;
+            font-family: var(--font-body);
+            transition: var(--transition-smooth);
+            background-color: #FAFAFA;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-red);
+            background-color: var(--pure-white);
+            box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.1);
+        }
+
+        /* Summary Panel */
+        .donation-summary {
+            background-color: var(--light-bg);
+            border-radius: var(--radius-md);
+            padding: 1.2rem 1.5rem;
+            margin-bottom: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 4px solid var(--primary-red);
+        }
+
+        .summary-label {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            font-weight: 600;
+        }
+
+        .summary-value {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: var(--dark-black);
+            font-family: var(--font-heading);
+        }
+
+        /* Submit Button */
+        .btn-submit-donation {
+            width: 100%;
+            background-color: var(--primary-red);
+            color: var(--pure-white);
+            padding: 1.2rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .btn-submit-donation:hover {
+            background-color: var(--primary-red-hover);
+            box-shadow: 0 6px 20px rgba(211, 47, 47, 0.35);
+        }
+
+        /* ==========================================================================
+           TRANSPARENCY & WHY HELP SECTION
+           ========================================================================== */
+        .why-us-section {
+            padding: 5rem 1.5rem;
+            background-color: var(--pure-white);
+        }
+
+        .features-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            border-radius: var(--radius-md);
+            background-color: var(--light-bg);
+            border: 1px solid var(--border-color);
+            transition: var(--transition-smooth);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-50px);
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-color: var(--primary-red);
+        }
+
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-red-light);
+            color: var(--primary-red);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.2rem;
+        }
+
+        .feature-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-black);
+        }
+
+        .feature-desc {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* ==========================================================================
+           FOOTER
+           ========================================================================== */
+        .footer {
+            background-color: var(--dark-black);
+            color: var(--pure-white);
+            padding: 4rem 1.5rem 2rem;
+            border-top: 4px solid var(--primary-red);
+        }
+
+        .footer-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .footer-col-title {
+            font-size: 1.1rem;
+            margin-bottom: 1.2rem;
+            color: var(--pure-white);
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .footer-col-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 30px;
+            height: 2px;
+            background-color: var(--primary-red);
+        }
+
+        .footer-desc {
+            color: #A0A0A0;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .footer-contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #A0A0A0;
+            font-size: 0.9rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-contact-item i {
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #2A2A2A;
+            text-align: center;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* ==========================================================================
+           MODAL NOTIFICATION
+           ========================================================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: var(--pure-white);
+            padding: 2.5rem;
+            border-radius: var(--radius-lg);
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: var(--shadow-lg);
+            transform: translateY(20px);
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active .modal-content {
+            transform: translateY(0);
+        }
+
+        .modal-icon {
+            width: 70px;
+            height: 70px;
+            background-color: var(--primary-red-light);
+            color: var(--primary-red);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.2rem;
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: var(--dark-black);
+        }
+
+        .modal-text {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn-modal-close {
+            background-color: var(--dark-black);
+            color: var(--pure-white);
+            padding: 0.8rem 2rem;
+            border: none;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-modal-close:hover {
+            background-color: var(--primary-red);
+        }
+
+        /* ==========================================================================
+           RESPONSIVE DESIGN (MEDIA QUERIES)
+           ========================================================================== */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Can be expanded with a hamburger menu if needed */
+            }
+
+            .hero-title {
+                font-size: 2.2rem;
+            }
+
+            .hero-description {
+                font-size: 1rem;
+            }
+
+            .inputs-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .input-group.full-width {
+                grid-column: span 1;
+            }
+
+            .amounts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .form-body {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVBAR HEADER -->
+    <header class="header">
+        <div class="nav-container">
+            <a href="#" class="brand-logo">
+                <div class="brand-badge">1</div>
+                <div class="brand-text">
+                    <span class="brand-title">Bomba Aconcagua</span>
+                    <span class="brand-subtitle">Primera Compañía • San Felipe</span>
+                </div>
+            </a>
+            <nav class="nav-links">
+                <a href="#donar" class="nav-link">¿Por qué donar?</a>
+                <a href="#impacto" class="nav-link">Nuestro Impacto</a>
+                <a href="#donar-form" class="btn-donate-nav">
+                    <i class="fa-solid fa-heart"></i> Hazte Socio
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">
+                <i class="fa-solid fa-shield-halved"></i> Campaña Oficial de Socios Cooperadores
+            </div>
+            <h1 class="hero-title">
+                Nuestra misión es protegerte.<br>
+                <span class="hero-slogan">¡Ayúdanos a seguir Ayudándote!</span>
+            </h1>
+            <p class="hero-description">
+                Los Bomberos de la Primera Compañía responden voluntariamente las 24 horas del día. Tu aporte constante nos permite equipar a nuestros voluntarios y mantener nuestras unidades operativas.
+            </p>
+            <div class="hero-actions">
+                <a href="#donar-form" class="btn-hero-primary">
+                    <i class="fa-solid fa-hand-holding-dollar"></i> Unirme como Socio Ahora
+                </a>
+                <a href="#donar" class="btn-hero-secondary">Saber Más</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACT METRICS -->
+    <section class="impact-section" id="impacto">
+        <div class="impact-grid">
+            <div class="impact-item">
+                <div class="impact-number">24/7</div>
+                <div class="impact-label">Disponibilidad Ininterrumpida</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">+100</div>
+                <div class="impact-label">Años Protegiendo la Comunidad</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">100%</div>
+                <div class="impact-label">Voluntarios Comprometidos</div>
+            </div>
+            <div class="impact-item">
+                <div class="impact-number">0</div>
+                <div class="impact-label">Sueldos, Todo es Vocación</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION FORM SECTION -->
+    <section class="donation-section" id="donar-form">
+        <div class="section-header">
+            <h2 class="section-title">Únete a Nuestra Red de Apoyo</h2>
+            <p class="section-subtitle">Selecciona el monto con el que deseas colaborar. Cada aporte suma directamente a la adquisición de equipos de protección e insumos de emergencia.</p>
+        </div>
+
+        <div class="donation-card">
+            <!-- Type Tabs -->
+            <div class="card-header-tabs">
+                <button type="button" class="tab-btn active" id="tab-monthly" onclick="selectFrequency('mensual')">
+                    <i class="fa-solid fa-rotate-right"></i> Aporte Mensual (Recomendado)
+                </button>
+                <button type="button" class="tab-btn" id="tab-once" onclick="selectFrequency('unica')">
+                    <i class="fa-solid fa-bolt"></i> Aporte Único
+                </button>
+            </div>
+
+            <form class="form-body" id="partner-form" onsubmit="handleFormSubmit(event)">
+                
+                <!-- Amount Selection -->
+                <div class="form-group-title">
+                    <i class="fa-solid fa-circle-dollar-to-slot" style="color: var(--primary-red);"></i>
+                    <span>1. Selecciona tu aporte</span>
+                </div>
+
+                <div class="amounts-grid">
+                    <button type="button" class="amount-btn" onclick="setAmount(3000, this)">$3.000</button>
+                    <button type="button" class="amount-btn selected" onclick="setAmount(5000, this)">\$5.000</button>
+                    <button type="button" class="amount-btn" onclick="setAmount(10000, this)">\$10.000</button>
+                    <button type="button" class="amount-btn" onclick="setAmount(20000, this)">\$20.000</button>
+                </div>
+
+                <div class="custom-amount-wrapper">
+                    <span>\$</span>
+                    <input type="number" id="custom-amount" class="custom-amount-input" placeholder="Otro monto personalizado (CLP)" min="1000" oninput="handleCustomAmount(this)">
+                </div>
+
+                <!-- Personal Information -->
+                <div class="form-group-title" style="margin-top: 2rem;">
+                    <i class="fa-solid fa-user-shield" style="color: var(--primary-red);"></i>
+                    <span>2. Ingresa tus datos de contacto</span>
+                </div>
+
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label class="input-label" for="fullname">Nombre Completo *</label>
+                        <input type="text" id="fullname" class="form-control" placeholder="Ej. Juan Pérez" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="rut">RUT *</label>
+                        <input type="text" id="rut" class="form-control" placeholder="12.345.678-K" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="email">Correo Electrónico *</label>
+                        <input type="email" id="email" class="form-control" placeholder="ejemplo@correo.cl" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label class="input-label" for="phone">Teléfono / WhatsApp *</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="+56 9 1234 5678" required>
+                    </div>
+
+                    <div class="input-group full-width">
+                        <label class="input-label" for="address">Dirección (Opcional - San Felipe)</label>
+                        <input type="text" id="address" class="form-control" placeholder="Calle, Número, Villa o Población">
+                    </div>
+                </div>
+
+                <!-- Dynamic Summary -->
+                <div class="donation-summary">
+                    <div>
+                        <div class="summary-label">Resumen de tu colaboración:</div>
+                        <div style="font-size: 0.85rem; color: var(--text-muted);" id="summary-frequency-text">Aporte Mensual recurrente</div>
+                    </div>
+                    <div class="summary-value" id="summary-amount">\$5.000 CLP</div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit-donation">
+                    <i class="fa-solid fa-lock"></i> Confirmar y Registrar Socio
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- WHY BECOME A PARTNER SECTION -->
+    <section class="why-us-section" id="donar">
+        <div class="section-header">
+            <h2 class="section-title">¿A dónde va tu contribución?</h2>
+            <p class="section-subtitle">Tu constante colaboración asegura la efectividad operacional de la Primera Compañía en la comuna.</p>
+        </div>
+
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-fire-extinguisher"></i>
+                </div>
+                <h3 class="feature-title">Equipamiento Normado</h3>
+                <p class="feature-desc">Un uniforme estructural para incendios con certificación internacional supera los \$2.500.000 CLP. Tu aporte nos permite proteger la vida de nuestros voluntarios.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-truck-medical"></i>
+                </div>
+                <h3 class="feature-title">Mantención de Unidades</h3>
+                <p class="feature-desc">Mantenimiento mecánico preventivo y abastecimiento continuo de combustible para nuestros carros bomba de primera intervención.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fa-solid fa-kit-medical"></i>
+                </div>
+                <h3 class="feature-title">Insumos de Emergencia</h3>
+                <p class="feature-desc">Adquisición constante de botiquines, material de rescate técnico vehicular y equipos de respiración autónoma (ERA) para emergencias complejas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div>
+                <h4 class="footer-col-title">Bomba Aconcagua</h4>
+                <p class="footer-desc">
+                    Primera Compañía de Bomberos de San Felipe. Resguardando la vida y bienes de nuestra comunidad con honor, valor y disciplina.
+                </p>
+            </div>
+
+            <div>
+                <h4 class="footer-col-title">Contacto Directo</h4>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>Comuna de San Felipe, Región de Valparaíso</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <span>Emergencias: 132</span>
+                </div>
+                <div class="footer-contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <span>contacto@bombaaconcagua.cl</span>
+                </div>
+            </div>
+
+            <div>
+                <h4 class="footer-col-title">Compromiso Ético</h4>
+                <p class="footer-desc">
+                    Tus datos personales recopilados a través de esta plataforma son estrictamente confidenciales y utilizados únicamente para la gestión del registro de socios cooperadores.
+                </p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Primera Compañía de Bomberos "Bomba Aconcagua". Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- MODAL CONFIRMATION -->
+    <div class="modal-overlay" id="success-modal">
+        <div class="modal-content">
+            <div class="modal-icon">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="modal-title">¡Muchas Gracias!</h3>
+            <p class="modal-text" id="modal-message">Tu solicitud para registrarte como Socio Cooperador ha sido recibida con éxito. Nos pondremos en contacto contigo a la brevedad para finalizar la activación de tu aporte.</p>
+            <button class="btn-modal-close" onclick="closeModal()">Entendido</button>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // State management
+        let currentAmount = 5000;
+        let currentFrequency = 'mensual';
+
+        // Set amount from pre-defined buttons
+        function setAmount(amount, element) {
+            currentAmount = amount;
+            
+            // UI updates
+            document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('selected'));
+            element.classList.add('selected');
+            
+            document.getElementById('custom-amount').value = '';
+            updateSummary();
+        }
+
+        // Handle custom input amount
+        function handleCustomAmount(input) {
+            const val = parseInt(input.value);
+            if (val && val > 0) {
+                currentAmount = val;
+                document.querySelectorAll('.amount-btn').forEach(btn => btn.classList.remove('selected'));
+            } else {
+                currentAmount = 0;
+            }
+            updateSummary();
+        }
+
+        // Select frequency tab
+        function selectFrequency(freq) {
+            currentFrequency = freq;
+            const btnMonthly = document.getElementById('tab-monthly');
+            const btnOnce = document.getElementById('tab-once');
+
+            if (freq === 'mensual') {
+                btnMonthly.classList.add('active');
+                btnOnce.classList.remove('active');
+            } else {
+                btnOnce.classList.add('active');
+                btnMonthly.classList.remove('active');
+            }
+            updateSummary();
+        }
+
+        // Format Chilean Peso (CLP)
+        function formatCurrency(val) {
+            return '\$' + val.toLocaleString('es-CL') + ' CLP';
+        }
+
+        // Update Summary block dynamically
+        function updateSummary() {
+            const summaryAmountEl = document.getElementById('summary-amount');
+            const summaryFreqEl = document.getElementById('summary-frequency-text');
+
+            summaryAmountEl.textContent = formatCurrency(currentAmount);
+            summaryFreqEl.textContent = currentFrequency === 'mensual' ? 'Aporte Mensual recurrente' : 'Aporte Único en una cuota';
+        }
+
+        // Handle form submission
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            if (currentAmount < 1000) {
+                alert('Por favor ingresa un monto válido igual o superior a \$1.000 CLP.');
+                return;
+            }
+
+            const name = document.getElementById('fullname').value;
+            const email = document.getElementById('email').value;
+
+            // Display success modal
+            const modalMessage = document.getElementById('modal-message');
+            modalMessage.textContent = `Gracias ${name}. Tu solicitud de socio por ${formatCurrency(currentAmount)} (${currentFrequency}) ha sido recepcionada correctamente. Enviaremos los detalles a ${email}.`;
+
+            document.getElementById('success-modal').classList.add('active');
+        }
+
+        // Close modal and reset form
+        function closeModal() {
+            document.getElementById('success-modal').classList.remove('active');
+            document.getElementById('partner-form').reset();
+            setAmount(5000, document.querySelectorAll('.amount-btn')[1]);
+        }
+    </script>
+</body>
+</html>
